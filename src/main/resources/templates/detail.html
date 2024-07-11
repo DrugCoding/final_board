@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <h1>게시글 디테일 페이지</h1>
+<body>
+<div th:if="${pickme2}">
+    <h2 th:text="${pickme2.title}"></h2>
+    <p th:text="${pickme2.content}"></p>
+    <form th:action="@{/delete/{articlePk}(articlePk=${pickme2.articlePk})}" method="post">
+        <input type="hidden" name="_method" value="delete"/>
+        <button type="submit">삭제</button>
+    </form>
+</div>
+</body>
+</html>
